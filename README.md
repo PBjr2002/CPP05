@@ -21,7 +21,6 @@ This project focused on:
 - Custom exception classes (`GradeTooHighException`, `GradeTooLowException`)
 - Grade validation (1-150 range) with proper exception throwing
 - Exception handling with try-catch blocks
-- Const correctness and member function implementationerview
 
 ---
 
@@ -29,7 +28,6 @@ This project focused on:
 **Goal:** Introduce a `Form` class that bureaucrats can sign, with grade requirements for signing.
 
 **Key concepts:**
-- Composition: `Form` class with signing requirements and execution requirements
 - Interaction between `Bureaucrat` and `Form` objects
 - Additional exception handling for form operations
 - Friend functions and operator overloading for output
@@ -51,7 +49,6 @@ This project focused on:
 **Goal:** Implement an `Intern` class that can create forms dynamically based on their names.
 
 **Key concepts:**
-- Factory pattern: `Intern` class creates forms by name
 - Dynamic form instantiation without knowing the exact type at compile time
 - Error handling for unknown form types
 - Function pointers or arrays of creation functions
