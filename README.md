@@ -2,57 +2,58 @@
 
 ## Project Overview
 
-**CPP 05** explores subtype polymorphism, abstract classes, and interfaces in C++. I implemented a hierarchy of animal classes demonstrating polymorphic behavior through virtual functions.
+**CPP 05** explores exception handling, polymorphism, and abstract classes in C++ through a bureaucratic system. I implemented a hierarchy of bureaucrats and forms demonstrating exception management, inheritance, and virtual functions.
 
 This project focused on:
-- Designing derived classes that inherit and extend base class attributes and behaviors
-- Overriding constructors, destructors, and virtual member functions to achieve polymorphism
-- Implementing dynamic memory management with deep copies for class members
-- Creating abstract base classes and interfaces to enforce design constraints and enable flexible implementations
-- Adding specialized member functions unique to derived classes to demonstrate extended functionality
+- Implementing custom exception classes and proper exception handling
+- Creating a bureaucrat class with grade validation and exception throwing
+- Building a form system with signing and execution mechanics
+- Developing polymorphic form types with specialized behaviors
+- Implementing abstract base classes and pure virtual functions
+- Creating an intern factory pattern for dynamic form creation
 
 ---
 
 ### Exercise 00: Mommy, when I grow up, I want to be a bureaucrat!
-**Goal:** Implement a base `Animal` class and derived `Dog` and `Cat` classes, showcasing polymorphic behavior through `makeSound()`.
+**Goal:** Implement a `Bureaucrat` class with grade management and custom exception handling.
 
 **Key concepts:**
-- Virtual functions and dynamic dispatch (`makeSound()`)
-- Protected attributes and inheritance
-- Implementation of a “wrong” hierarchy (`WrongAnimal` and `WrongCat`) to demonstrate what happens without proper polymorphism.....
+- Custom exception classes (`GradeTooHighException`, `GradeTooLowException`)
+- Grade validation (1-150 range) with proper exception throwing
+- Exception handling with try-catch blocks
+- Const correctness and member function implementationerview
 
 ---
 
 ### Exercise 01: Form up, maggots!
-**Goal:** Introduce a `Brain` class as a dynamic member of `Dog` and `Cat` for deep state management.
+**Goal:** Introduce a `Form` class that bureaucrats can sign, with grade requirements for signing.
 
 **Key concepts:**
-- Composition: `Dog` and `Cat` own a pointer to a `Brain` object
-- Dynamic memory allocation (`new` and `delete`) inside classes
-- Deep copy implementation to avoid shallow copies and double deletes
-- Array of polymorphic objects, proper deletion via base class pointers
+- Composition: `Form` class with signing requirements and execution requirements
+- Interaction between `Bureaucrat` and `Form` objects
+- Additional exception handling for form operations
+- Friend functions and operator overloading for output
 
 ---
 
 ### Exercise 02: No, you need form 28B, not 28C...
-**Goal:** Modify the `Animal` class to become abstract, preventing direct instantiation while maintaining polymorphic behavior.
+**Goal:** Make the `Form` class abstract (`AForm`) and implement concrete form types with specific behaviors.
 
 **Key concepts:**
-- Pure virtual functions (making `Animal` abstract)
-- Ensuring all derived classes implement abstract methods 
-- Maintaining polymorphism and behavior from previous exercises
+- Abstract base class `AForm` with pure virtual execute function
+- Concrete form implementations: `ShrubberyCreationForm`, `RobotomyRequestForm`, `PresidentialPardonForm`
+- Each form has different grade requirements and execution behaviors
+- Polymorphic form execution through virtual functions
 
 ---
 
-### Exercise 03:  At least this beats coffee-making
-**Goal:** Implement an interface-like hierarchy with a magical Materia system (`AMateria`, `Character`, `MateriaSource`) showcasing pure abstract classes, cloning, inventory management, and interaction.
+### Exercise 03: At least this beats coffee-making
+**Goal:** Implement an `Intern` class that can create forms dynamically based on their names.
 
 **Key concepts:**
-- Pure abstract classes as interfaces (`AMateria`, `ICharacter`, `IMateriaSource`)
-- Implementing concrete classes: `Ice`, `Cure`, `Character`, `MateriaSource`
-- Prototype pattern: cloning Materias via `clone()` method
-- Inventory management with fixed size and safe adding/removing
-- Deep copy semantics for inventory and materials
-- Method overriding with polymorphic behavior (`use()`)
-- Complex interaction between objects using interfaces
+- Factory pattern: `Intern` class creates forms by name
+- Dynamic form instantiation without knowing the exact type at compile time
+- Error handling for unknown form types
+- Function pointers or arrays of creation functions
+- Integration with the existing bureaucrat and form hierarchy
 
